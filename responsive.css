@@ -1,0 +1,160 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__menu {
+  display: none;
+}
+
+.hero, .top-news, .scores, .weather, .recent-news {
+  order: 10;
+}
+
+@media screen and (max-width: 549px) {
+  .header__inner {
+    padding: 5px;
+  }
+  .header__logo {
+    height: 48px;
+    margin-right: 0.5em;
+  }
+  .header__title {
+    margin-left: 0;
+    font-size: 1.7em;
+    vertical-align: bottom; 
+  }
+  .nav {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translate(-550px, 0);
+    -webkit-transform: translate(-550px, 0);
+    transition: transform 0.7s ease;
+    z-index: 10;
+  }
+  .nav.open {
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    z-index: 1;
+    background-color: #323232;
+  }
+  .nav__item {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+  .nav a {
+    border: none;
+  }
+  .header__menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 1em 0.5em;
+  }
+  .header__menu svg {
+    width: 32px;
+    fill: #212121;
+  }
+  .hero article {
+    height: 30%;
+  }
+  .description h2 {
+    text-align: center;
+  }
+  .description p {
+    display: none;
+  }
+  .scores__location {
+    display: none;
+  }
+  .recent-news p {
+    display: none;
+  }
+  .snippet {
+    margin: 24px 0 55px;
+  }
+  .snippet img {
+    width: 50%;
+  }
+  footer li {
+    display: block;
+    margin: 0.5em 1em;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .hero {
+    order: 0;
+    width: 100%;
+  }
+  .weather {
+    order: 1;
+    width: 40%;
+  }
+  .snippet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .snippet__title {
+    order: -1;
+    width: 100%;
+    margin: 0 0 0.5em;
+  }
+  .snippet a {
+    order: 1;
+    width: 30%;
+  }
+  .snippet img {
+    width: 100%;
+  }
+  .snippet p {
+    order: 1;
+    width: 60%;
+    padding: 0 20px;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .hero {
+    width: 100%;
+  }
+  .top-news {
+    order: 1;
+    width: 100%;
+  }
+  .scores {
+    order: 2;
+    width: 60%;
+  }
+  .weather {
+    order: 3;
+  }
+  .header__logo {
+    margin: 1em;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  main, .header__inner, .nav, .content {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header__inner {
+    text-align: center;
+  }
+  .scores .news__title {
+    margin: 0 0 0.5em 1em;
+  }
+  .snippet img {
+    transition: all 0.7s ease-in-out;
+  }
+  .snippet img:hover {
+    background-color: #000000;
+    opacity: 0.4;
+  }
+}
